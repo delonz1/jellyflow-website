@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JellyFlow AI - Intelligent AI Automation for Your Business</title>
+
+    <!-- SEO and Social Sharing Tags (Favicon & Thumbnail) -->
+    <meta name="description" content="We build custom AI-powered workflows that eliminate repetitive tasks, so you can focus on growing your business.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jellyflow.ai/">
+    <meta property="og:title" content="JellyFlow AI - Intelligent AI Automation">
+    <meta property="og:description" content="We build custom AI-powered workflows that eliminate repetitive tasks, so you can focus on growing your business.">
+    <meta property="og:image" content="thumbnail.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jellyflow.ai/">
+    <meta property="twitter:title" content="JellyFlow AI - Intelligent AI Automation">
+    <meta property="twitter:description" content="We build custom AI-powered workflows that eliminate repetitive tasks, so you can focus on growing your business.">
+    <meta property="twitter:image" content="thumbnail.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* A very light gray background */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #8A2BE2, #4B0082);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background: linear-gradient(to right, #8A2BE2, #4B0082);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+        }
+        .service-card, .idea-card, .testimonial-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .service-card:hover, .idea-card:hover, .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #6366f1;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <!-- Corrected SVG Logo -->
+                <svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="glossyOrb" cx="0.35" cy="0.35" r="0.65" fx="0.3" fy="0.3">
+                            <stop offset="0%" stop-color="#FDB813" stop-opacity="1"/>
+                            <stop offset="100%" stop-color="#F7971E" stop-opacity="1"/>
+                        </radialGradient>
+                    </defs>
+                    <text x="0" y="29" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#111827">Jellyflow</text>
+                    <circle cx="125" cy="20" r="9" fill="url(#glossyOrb)"/>
+                    <text x="139" y="29" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#374151">AI</text>
+                </svg>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#contact" class="text-white px-5 py-2 rounded-lg font-semibold cta-button">Start Automating</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#contact" class="block mt-2 text-white text-center px-5 py-2 rounded-lg font-semibold cta-button">Start Automating</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-black">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    Stop Doing It Manually.
+                    <br>
+                    Let's <span class="gradient-text">Automate</span> It.
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
+                    We build custom AI-powered workflows that eliminate repetitive tasks, so you can focus on growing your business.
+                </p>
+                <div class="mt-10">
+                    <a href="#contact" class="text-white px-8 py-4 rounded-lg font-bold text-lg cta-button">
+                        Get An AI Audit
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Solutions</h2>
+                    <p class="mt-4 max-w-xl mx-auto text-lg text-gray-600">We create tailored AI systems to solve your biggest operational bottlenecks.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl service-card"><div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><h3 class="text-xl font-bold mb-2">Intelligent AI Chatbots</h3><p class="text-gray-600">Create smart, 24/7 conversations that engage leads, answer questions, and qualify customers automatically.</p></div>
+                    <div class="bg-white p-8 rounded-xl service-card"><div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></div><h3 class="text-xl font-bold mb-2">Seamless Workflows</h3><p class="text-gray-600">We build intelligent workflows that connect your apps, handling client onboarding, lead nurturing, and more.</p></div>
+                    <div class="bg-white p-8 rounded-xl service-card"><div class="bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center mb-5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m10 14-2 2 2 2"/><path d="m14 18 2-2-2-2"/></svg></div><h3 class="text-xl font-bold mb-2">Adaptive Data Processing</h3><p class="text-gray-600">Eliminate data bottlenecks. We automate data entry and extraction from documents, saving countless hours of manual work.</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Who We Are Section -->
+        <section id="who-we-are" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Your Automation Partner</h2>
+                    <p class="mt-4 text-lg text-gray-600">Hi, I'm Delon. My passion is helping businesses like yours break free from repetitive, time-consuming tasks. I design and build custom AI systems that work 24/7, turning 90-minute processes into 5-minute tasks. The result is a more scalable and efficient operation, freeing you to focus on what truly matters: your clients.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="process" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Your Journey to an Automated System</h2>
+                    <p class="mt-4 max-w-xl mx-auto text-lg text-gray-600">A simple, transparent process to get you from manual work to automation.</p>
+                </div>
+                <div class="space-y-12 md:space-y-0 md:grid grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="mx-auto bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg z-10 relative">1</div>
+                        <h3 class="mt-4 text-xl font-semibold">Discover Your Potential</h3>
+                        <p class="mt-2 text-gray-600">We start with a free call to understand your business, pinpoint bottlenecks, and define your ideal automated workflow.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg z-10 relative">2</div>
+                        <h3 class="mt-4 text-xl font-semibold">Build Your System</h3>
+                        <p class="mt-2 text-gray-600">Our team gets to work building your custom, adaptable solution, providing regular updates so you're always in the loop.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg z-10 relative">3</div>
+                        <h3 class="mt-4 text-xl font-semibold">Launch & Adapt</h3>
+                        <p class="mt-2 text-gray-600">We launch your new seamless system, provide training, and offer ongoing support to ensure it adapts with your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Idea Generator Section -->
+        <section id="ai-generator" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-gray-900">✨ See AI in Action: Idea Generator</h2><p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Not sure where to start? Describe a bottleneck, and let our AI brainstorm smart solutions for you.</p></div>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div><label for="userName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label><input type="text" id="userName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Jane Doe" required></div><div><label for="userEmail" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label><input type="email" id="userEmail" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="jane.doe@example.com" required></div></div>
+                        <div><label for="businessType" class="block text-sm font-medium text-gray-700 mb-1">Your Business Type</label><input type="text" id="businessType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., Real Estate Agent, Photographer" required></div>
+                        <div><label for="businessProblem" class="block text-sm font-medium text-gray-700 mb-1">Describe a repetitive task or problem</label><textarea id="businessProblem" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., Following up with new leads, scheduling appointments" required></textarea></div>
+                        <div><button id="generateIdeasBtn" class="w-full bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold text-lg cta-button flex items-center justify-center space-x-2 disabled:bg-indigo-400"><span id="generateBtnText">✨ Generate Automation Ideas</span></button></div>
+                    </div>
+                </div>
+                <div id="ideasResult" class="mt-12 max-w-3xl mx-auto"></div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Don't Just Take Our Word For It</h2>
+                    <p class="mt-4 max-w-xl mx-auto text-lg text-gray-600">See how we've helped businesses like yours improve their efficiency.</p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-lg testimonial-card">
+                        <p class="text-xl italic text-gray-700">"Working with JellyFlow was a game-changer. They automated our entire lead follow-up process, saving us over 10 hours a week. We're now closing more deals and have more time to focus on our clients. I can't recommend them enough!"</p>
+                        <div class="flex items-center mt-6">
+                            <img src="https://placehold.co/64x64/E0E7FF/4F46E5?text=JS" alt="John Smith" class="w-16 h-16 rounded-full">
+                            <div class="ml-4">
+                                <p class="font-bold text-gray-900">John Smith</p>
+                                <p class="text-gray-600">Founder, Creative Agency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="pb-16 md:pb-24">
+            <div class="container mx-auto px-6">
+                <div class="bg-indigo-700 rounded-2xl p-8 md:p-16 text-center shadow-2xl shadow-indigo-200">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">Ready to Start Automating?</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-indigo-200">Book a free, no-obligation consultation to discover how an automated system can transform your business.</p>
+                    <div class="mt-8">
+                        <a href="https://calendly.com/jellyflow/30min" target="_blank" class="text-white px-8 py-4 rounded-lg font-bold text-lg cta-button">
+                            Book My Free AI Audit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024 JellyFlow AI. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Intelligent AI Systems for Adaptive Businesses.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // --- AI Idea Generator & Lead Capture Logic ---
+        const apiKey = "AIzaSyCxQaXQxk9mca4XSZH0VOs7X693tflX6Bw"; // API Key has been added
+
+        const generateBtn = document.getElementById('generateIdeasBtn');
+        const generateBtnText = document.getElementById('generateBtnText');
+        const nameInput = document.getElementById('userName');
+        const emailInput = document.getElementById('userEmail');
+        const businessTypeInput = document.getElementById('businessType');
+        const businessProblemInput = document.getElementById('businessProblem');
+        const ideasResultDiv = document.getElementById('ideasResult');
+
+        generateBtn.addEventListener('click', async () => {
+            if (!apiKey || apiKey === "PASTE_YOUR_GOOGLE_AI_API_KEY_HERE") {
+                ideasResultDiv.innerHTML = `<p class="text-center text-red-500">API Key not configured. Please get a key from Google AI Studio and add it to the script.</p>`;
+                return;
+            }
+
+            const leadData = {
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                businessType: businessTypeInput.value.trim(),
+                businessProblem: businessProblemInput.value.trim(),
+                timestamp: new Date().toISOString()
+            };
+
+            if (!leadData.name || !leadData.email || !leadData.businessType || !leadData.businessProblem) {
+                ideasResultDiv.innerHTML = `<p class="text-center text-red-500">Please fill out all fields to generate ideas.</p>`;
+                return;
+            }
+            
+            generateBtn.disabled = true;
+            generateBtnText.textContent = 'Generating...';
+            ideasResultDiv.innerHTML = '<div class="flex justify-center"><div class="loader"></div></div>';
+            
+            await captureLead(leadData);
+
+            const prompt = `You are an expert AI automation consultant for a company called JellyFlow. Your brand is all about being "efficient," "seamless," and "adaptable." A potential client, ${leadData.name}, from the "${leadData.businessType}" industry is struggling with the following problem or bottleneck: "${leadData.businessProblem}". Based on this, generate 3 distinct, actionable automation workflow ideas they could implement. For each idea, provide a clear 'title' that sounds appealing and a short 'description' of how it creates a more efficient or seamless process and what the benefit is. The tone should be helpful, clear, and encouraging, using words like "efficient," "seamless," "effortless," and "automated."`;
+            const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+            const payload = {
+                contents: chatHistory,
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: {
+                        type: "ARRAY",
+                        items: {
+                            type: "OBJECT",
+                            properties: { "title": { "type": "STRING" }, "description": { "type": "STRING" } },
+                            required: ["title", "description"]
+                        }
+                    }
+                }
+            };
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (!response.ok) {
+                    const errorMsg = result.error?.message || `API request failed with status ${response.status}`;
+                    throw new Error(errorMsg);
+                }
+                
+                if (result.candidates?.[0]?.content?.parts?.[0]) {
+                    const jsonString = result.candidates[0].content.parts[0].text;
+                    const ideas = JSON.parse(jsonString);
+                    displayIdeas(ideas);
+                } else {
+                    throw new Error("No content received from the API. The request may have been blocked for safety reasons.");
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                ideasResultDiv.innerHTML = `<p class="text-center text-red-500">Sorry, an error occurred: ${error.message}</p>`;
+            } finally {
+                generateBtn.disabled = false;
+                generateBtnText.textContent = '✨ Generate Automation Ideas';
+            }
+        });
+
+        async function captureLead(data) {
+            console.log('Sending lead to backend:', data);
+            try {
+                const response = await fetch('/.netlify/functions/add-to-sheet', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to capture lead.');
+                }
+                console.log('Lead captured successfully!');
+            } catch (error) {
+                console.error('Lead capture failed:', error);
+            }
+        }
+
+        function displayIdeas(ideas) {
+            ideasResultDiv.innerHTML = '';
+            const ideasHtml = ideas.map(idea => `
+                <div class="bg-white p-6 rounded-xl idea-card mb-6 animate-fade-in">
+                    <h4 class="text-lg font-bold text-indigo-700 mb-2">${idea.title}</h4>
+                    <p class="text-gray-600">${idea.description}</p>
+                </div>
+            `).join('');
+            
+            const resultsContainer = `
+                <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">Here are a few ideas for you:</h3>
+                <div class="space-y-6">
+                    ${ideasHtml}
+                </div>
+                <p class="text-center mt-8 text-gray-600">Like these ideas? <a href="#contact" class="font-bold text-indigo-600 hover:underline">Let's build a seamless system for you!</a></p>
+            `;
+            
+            ideasResultDiv.innerHTML = resultsContainer;
+        }
+    </script>
+
+</body>
+</html>
